@@ -1,0 +1,9 @@
+# build Configuration, i.e. Debug, Release, etc.
+configuration: Release
+before_build:
+  - nuget restore
+build:
+  parallel: true                     # enable MSBuild parallel builds
+  project: AddTwoBigNumbers.sln      # path to Visual Studio solution or project
+# MSBuild verbosity level
+  verbosity: minimal

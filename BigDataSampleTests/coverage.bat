@@ -1,0 +1,1 @@
+﻿..\..\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:".\packages\NUnit.ConsoleRunner.3.6.1\tools\nunit3-console.exe" -targetargs:".\BigDataSampleTests\bin\Debug\BigDataSampleTests.dll" -excludebyattribute:*.ExcludeFromCodeCoverage* -hideskipped:All -output:.\Coverage\Codecoverage.xml
