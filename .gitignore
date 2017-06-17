@@ -23,8 +23,8 @@ bld/
 [Oo]bj/
 
 # Coverage 
-[Cc]odeCoverageReport
-[Cc]overage
+[Cc]odeCoverageReport/
+[Cc]overage/
 
 #HadoopLibrary Ignore
 #MRLib
