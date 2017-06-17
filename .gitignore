@@ -27,7 +27,7 @@ bld/
 [Cc]overage
 
 #HadoopLibrary Ignore
-MRLib
+#MRLib
 
 # Visual Studio 2015 cache/options directory
 .vs/
