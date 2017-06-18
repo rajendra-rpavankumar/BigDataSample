@@ -28,6 +28,7 @@ bld/
 appveyor - Coveralls.md
 appveyor - CodeCovworkingfile.md
 appveyor_buildpasswithcoverallsnoreport.md
+appveyor_CodeCov.ymlmd
 
 #HadoopLibrary Ignore
 #MRLib
