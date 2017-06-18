@@ -1,26 +1,14 @@
-version: 1.4.0.{build}
-
-skip_tags: true
-
-configuration: Debug
-
-assembly_info:
-  patch: true
-  file: AssemblyInfo.*
-  assembly_version: "{version}"
-  assembly_file_version: "{version}"
-  assembly_informational_version: "{version}"
-
-nuget:
-  disable_publish_on_pr: true
-
-install:
+# build Configuration, i.e. Debug, Release, etc.
+configuration: Release
+before_build:
   - nuget restore
-
 build:
-  project: BigDataSample.sln
+  parallel: true                     # enable MSBuild parallel builds
+  project: BigDataSample.sln      # path to Visual Studio solution or project
+# MSBuild verbosity level
   verbosity: minimal
-
-environment:
-    COVERALLS_REPO_TOKEN:  
-       secure: uEHQmEGFuj2lU9bYOzPz3xegy2ExSWhB5SmxvgUPJtyAZumUc/1UrIAVkgNPjja8
+after_test: 
+  - packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:".\packages\NUnit.ConsoleRunner.3.6.1\tools\nunit3-console.exe" -targetargs:".\BigDataSampleTests\bin\Release\BigDataSampleTests.dll" -excludebyattribute:*.ExcludeFromCodeCoverage* -hideskipped:All -output:.\Codecoverage.xml 
+  - "SET PATH=C:\\Python34;C:\\Python34\Tools\\Scripts;%PATH%"
+  - pip install codecov
+  - codecov -f "Codecoverage.xml"
