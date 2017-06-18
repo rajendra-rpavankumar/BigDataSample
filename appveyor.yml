@@ -18,5 +18,5 @@ install:
   - nuget restore
 
 build:
-  project: coveralls.net.sln
+  project: BigDataSample.sln
   verbosity: minimal
