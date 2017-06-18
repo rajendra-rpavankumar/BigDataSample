@@ -1,16 +1,14 @@
-version: 1.0.{build}
-
-install:
-    - nuget restore
-    
+# build Configuration, i.e. Debug, Release, etc.
+configuration: Release
+before_build:
+  - nuget restore
 build:
-  project: BigDataSample.sln
-  verbosity: detailed
-
-environment:
-    COVERALLS_REPO_TOKEN:  
-       secure: uEHQmEGFuj2lU9bYOzPz3xegy2ExSWhB5SmxvgUPJtyAZumUc/1UrIAVkgNPjja8
- 
+  parallel: true                     # enable MSBuild parallel builds
+  project: BigDataSample.sln      # path to Visual Studio solution or project
+# MSBuild verbosity level
+  verbosity: minimal
 after_test: 
-# generate report for NUnit testing framework:
-  -cmd: packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:"packages\NUnit.ConsoleRunner.3.6.1\tools\nunit3-console.exe" -targetargs:"/domain:single BigDataSampleTests/bin/debug/BigDataSampleTests.dll" -output:coverage.xml
+  - packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:".\packages\NUnit.ConsoleRunner.3.6.1\tools\nunit3-console.exe" -targetargs:"BigDataSampleTests\bin\Debug\BigDataSampleTests.dll" -excludebyattribute:*.ExcludeFromCodeCoverage* -hideskipped:All -output:.\Codecoverage.xml 
+  - "SET PATH=C:\\Python27;C:\\Python27\\Tools\\Scripts;%PATH%"
+  - pip install codecov
+  - codecov -f "Codecoverage.xml"

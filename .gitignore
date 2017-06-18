@@ -25,6 +25,7 @@ bld/
 # Coverage 
 [Cc]odeCoverageReport/
 [Cc]overage/
+appveyor - Coveralls.md
 
 #HadoopLibrary Ignore
 #MRLib
