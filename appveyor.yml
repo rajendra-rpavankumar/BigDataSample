@@ -20,3 +20,7 @@ install:
 build:
   project: BigDataSample.sln
   verbosity: minimal
+
+environment:
+    COVERALLS_REPO_TOKEN:  
+       secure: uEHQmEGFuj2lU9bYOzPz3xegy2ExSWhB5SmxvgUPJtyAZumUc/1UrIAVkgNPjja8
