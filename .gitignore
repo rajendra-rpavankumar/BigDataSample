@@ -26,6 +26,7 @@ bld/
 [Cc]odeCoverageReport/
 [Cc]overage/
 appveyor - Coveralls.md
+appveyor - CodeCovworkingfile.md
 
 #HadoopLibrary Ignore
 #MRLib
