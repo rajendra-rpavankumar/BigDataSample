@@ -63,10 +63,16 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="PracticeTest.csv">
+    <None Include="Practice_Test1.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PrescriptionTest.csv">
+    <None Include="Practice_Test2.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Prescription_Test1.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Prescription_Test2.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="report.bat" />
