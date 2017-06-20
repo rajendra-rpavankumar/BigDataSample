@@ -29,6 +29,7 @@ appveyor - Coveralls.md
 appveyor - CodeCovworkingfile.md
 appveyor_buildpasswithcoverallsnoreport.md
 appveyor_CodeCov.ymlmd
+appveyor_coveralls_20Jun17noreportseenincoveralls.yml
 
 #HadoopLibrary Ignore
 #MRLib
